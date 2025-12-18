@@ -54,7 +54,7 @@ graph LR
     F --> H[Streamlit Dashboard];
     G --> H;
 
-Amazon_Sales_Trend(AI)/
+Amazon_Sales_Trend_AI/
 │
 ├── 📂 data/
 │   ├── 📂 raw/              # Original Amazon Sales CSV

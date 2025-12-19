@@ -1,10 +1,11 @@
-# 📈 Amazon_Sales_Trend(AI): Dual-Engine AI Forecasting (On Amazon Sales Data)
+# 📈 Amazon_Sales_Trend_Analysis_AI: Dual-Engine AI Forecasting
 
 ![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB.svg?style=flat&logo=python&logoColor=white) ![scikit-learn](https://img.shields.io/badge/AI-Random_Forest-F7931E.svg?style=flat&logo=scikit-learn&logoColor=white) ![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B.svg?style=flat&logo=streamlit&logoColor=white)
 
 This is a professional end-to-end Machine Learning project that forecasts weekly Amazon sales. It tackles the challenge of **intermittent demand** (sporadic, massive sales spikes) using a hybrid AI architecture.
 
-**📊 Live Dashboard:**
+**📊 Live Dashboard:** 
+
 
 ---
 
@@ -20,8 +21,8 @@ This is a professional end-to-end Machine Learning project that forecasts weekly
 Retail data is messy. Products like "Baby Food" or "Cereal" might have zero sales for weeks and then suddenly generate $1.7 Million in a single week. Standard forecasting models fail here, often predicting a safe, flat average.
 
 This project solves that problem by deploying two specialized AI models simultaneously:
-1.  **The Trend Analyzer** It is a classifier that predicts market direction (High vs. Low) with extreme accuracy.
-2.  **The Spike Hunter:** It is a regressor tuned aggressively to capture massive revenue spikes, rather than playing it safe.
+1.  **The Trend Analyzer:** A classifier that predicts market direction (High vs. Low) with extreme accuracy.
+2.  **The Spike Hunter:** A regressor tuned aggressively to capture massive revenue spikes, rather than playing it safe.
 
 ## ✨ Key Features
 
@@ -31,7 +32,7 @@ Raw transaction data is transformed into powerful time-series signals:
 * **Momentum Indicators:** Calculates week-over-week growth rates to detect accelerating trends.
 * **Rolling Volatility:** Measures stability versus erratic behavior over a 4-week window.
 
-### Dual-Model AI (Random Forest)
+### 🤖 Dual-Model AI (Random Forest)
 We pivoted from XGBoost to **Random Forest** because it proved superior at memorizing and predicting extreme, non-linear sales spikes present in this specific dataset.
 * **Model A (Regression):** Predicts exact dollar amounts, optimized for capturing million-dollar outliers.
 * **Model B (Classification):** Predicts a binary "High Growth" vs "Low Growth" status based on category medians.
@@ -53,8 +54,11 @@ graph LR
     E --> G[(Trend Model .pkl)];
     F --> H[Streamlit Dashboard];
     G --> H;
+```
 
-Amazon_Sales_Trend_AI/
+## 📁 Project Structure
+```
+Amazon_Sales_Trend_Analysis_AI/
 │
 ├── 📂 data/
 │   ├── 📂 raw/              # Original Amazon Sales CSV
@@ -75,12 +79,15 @@ Amazon_Sales_Trend_AI/
 │
 ├── README.md                # Project documentation
 └── requirements.txt         # Python dependencies
+```
 
 ## 📊 Model Performance
-
-| AI Engine | Objective | Primary Metric | Result | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Trend Classifier** | Predict Market Direction | Accuracy | **97.22%** | 🟢 Production Ready |
-| **Price Regressor** | Predict Revenue Spikes | MAE (Mean Abs Error) | **~$66k** | 🟡 Aggressive Tuning |
-
-*> **Note on Regression Error:** The MAE of $66k is intentional. Early models achieved a lower error (~$7k) by conservatively predicting near-zero values. The current model is tuned aggressively to attempt predicting million-dollar spikes. While this increases the average numerical error, it provides significantly more business value by identifying massive revenue opportunities that would otherwise be missed.*
+```
+| Model | Objective | Metric | Result | Status |
+|------|----------|--------|--------|--------|
+| Trend Classifier | Market Direction | Accuracy | **97.22%** | 🟢 Production Ready |
+| Sales Regressor | Revenue Forecasting | MAE | **~$66,000** | 🟡 Aggressively Tuned |
+```
+## Contributors
+- Aditi Saha: Project development, ML pipeline, Concepts discussion
+- Anurag Thakur: Dataset understanding, Dashboard, Model review

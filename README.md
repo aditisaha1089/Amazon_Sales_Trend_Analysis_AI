@@ -82,14 +82,15 @@ Amazon_Sales_Trend_Analysis_AI/
 ```
 
 ## 📊 Model Performance
-```
+
 | Model | Objective | Metric | Result | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Trend Classifier** | Market Direction | Accuracy | **97.22%** | 🟢 Production Ready |
 | **Sales Regressor** | Revenue Forecasting | MAE | **~$66,000** | 🟡 Aggressively Tuned |
 
 *> **Note on Regression Error:** The MAE of $66k is intentional. Early models achieved a lower error (~$7k) by conservatively predicting near-zero values. The current model is tuned aggressively to attempt predicting million-dollar spikes.*
-```
-## Contributors
-- Aditi Saha: Project development, ML pipeline, Concepts discussion
-- Anurag Thakur: Dataset understanding, Dashboard, Model review
+
+## 🔗 Contributors
+
+* **Aditi Saha:** Project development, ML pipeline, Concepts discussion
+* **Anurag Thakur:** Dataset understanding, Dashboard, Model review
